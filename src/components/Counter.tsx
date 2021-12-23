@@ -63,8 +63,8 @@ export const Counter = (props: StackProps) => {
     }
   };
   const handleCount = (v: string) => {
-    console.log("handleCount", typeof v);
-    const vNumber = parseInt(v)
+    console.log("handleCount", typeof v, v, parseInt(v));
+    const vNumber = parseInt(v) || 0
     setCount(vNumber);
     setEnd(addDays(start, vNumber));
   };
@@ -73,7 +73,7 @@ export const Counter = (props: StackProps) => {
     <Stack
       spacing={8}
       {...props}
-      sx={{'input[type=date]::-webkit-calendar-picker-indicator': {
+      sx={{'input[type="date"]::-webkit-calendar-picker-indicator': {
         color: 'red'
       }}}
     >
